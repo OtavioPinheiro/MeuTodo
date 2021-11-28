@@ -1,3 +1,4 @@
+using MeuTodo.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -11,6 +12,7 @@ namespace MeuTodo
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddDbContext<AppDbContext>(); //Estará disponível em todos os métodos que precisarmos através de injeção de dependência
         }
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
